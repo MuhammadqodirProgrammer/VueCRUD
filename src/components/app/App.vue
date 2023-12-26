@@ -109,7 +109,7 @@ switch (filter) {
 }
 
 .content {
-  width: 1000px;
+  max-width: 1000px;
   min-height: 700px;
   background-color: white;
   margin: 0 auto;
@@ -122,5 +122,12 @@ switch (filter) {
   background-color: #fcfaf5;
   border-radius: 4px;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+}
+@media (max-width:1000px){
+  .content {
+  max-width: 95%;
+  margin: 0 auto;
+
+} 
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <li class="  list-group-item d-flex justify-content-between  " :class="[{ like: test.like }, { favorite: test.favorite }]">
         <span class="list-group-item-label " @click="onLike" title="bosing va sevimlilarga qoshing" >
-            {{ test.name }}
+            {{ test.name.length > 25 ? `${test.name.slice(0,25)}..`  :test.name }}
         </span>
         <input type="number" class="list-group-item-input" :value="test.viwers" />
         <div class=" d-flex   justify-content-center gap-2 align-items-center  ">
@@ -105,5 +105,18 @@ export default {
 .list-group-item.favorite .list-group-item-label,
 .list-group-item.favorite .list-group-item-input {
     color: #e09f03;
+}
+
+@media (max-width:600px){
+    .list-group-item span {
+    line-height: 30px;
+    font-size: 16px;
+    width: 550px;
+}
+.list-group-item input {
+    line-height: 30px;
+    font-size: 14px;
+   max-width: 60px;
+}
 }
 </style>

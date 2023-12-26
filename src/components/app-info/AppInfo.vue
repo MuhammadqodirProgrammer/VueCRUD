@@ -1,16 +1,20 @@
 <template>
-    <div class="app_info">
+    <Box >
         <p class="fs-3 text-uppercase">
             Barcha kinolar soni {{ allMoviesCount }}
         </p>
         <p class="fs-4 text-uppercaseА">Korilgan kinolar soni {{ favoriteMoviesCount }}</p>
 
 
-    </div>
+    </Box>
 </template>
 
 <script>
+import Box from '../ui-componets/Box.vue'
 export default {
+    components:{
+        Box
+    },
     props: {
         allMoviesCount: {
             type: Number,
@@ -25,10 +29,5 @@ export default {
 </script>
 
 <style scoped >
-.app_info {
-    padding: 1.5rem;
-    background-color: #fcfaf5;
-    border-radius: 4px;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
-}
+
 </style>

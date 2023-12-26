@@ -1,19 +1,15 @@
 <template>
     <div class='btn-group'>
-        <button class="btn  " type="button" @click="filterHandler('all')"   :class="['all' ==filter ? 'btn-dark':'btn-outline-dark']" >Barchasi</button>
-        <button class="btn " type="button" @click="filterHandler('popular')"   
-        :class="['popular' ==filter ? 'btn-dark':'btn-outline-dark']" 
-        >Sevimli kinolar</button>
-        <button class="btn  " type="button" @click="filterHandler('mostViwers')"
-        :class="['mostViwers'
-         ==filter ? 'btn-dark':'btn-outline-dark']" 
-        >Eng kop korilgan
-            kinolar</button>
+
+        <Button v-for="btn in filterButtons"  :key="btn.name"  @click="filterHandler(btn.name)" :class="[btn.name
+         ==filter ? 'btn-dark':'btn-outline-dark']"    >{{ btn.title }} </Button>
     </div>
 
 </template>
 
 <script>
+import Button from "../ui-componets/Button.vue";
+
 export default {
     props: {
         updateFilterHendler: {
@@ -22,8 +18,26 @@ export default {
         },
        
     },
+    components:{
+    Button,
+},
     data() {
         return {
+            filterButtons:[
+
+            {
+                title:"Barcha kinolar",
+                name:"all",
+            },
+            {
+                title:"Sevimli kinolar",
+                name:"popular",
+            },
+            {
+                title:"Eng ko'p ko'rilgan kinolar",
+                name:"mostViwers",
+            },
+            ],
             filter: "all"
         }
     },
