@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import Button from "../ui-componets/Button.vue";
 
 export default {
     props: {
@@ -18,9 +17,7 @@ export default {
         },
        
     },
-    components:{
-    Button,
-},
+ 
     data() {
         return {
             filterButtons:[

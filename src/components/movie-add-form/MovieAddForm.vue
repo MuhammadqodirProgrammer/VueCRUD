@@ -1,7 +1,7 @@
 <template>
     <Box class="movie_add_form ">
 <h3> Yangi kino qoshish</h3>
-<form class="add_form d-flex "  @submit.prevent="addMovie" >
+<form class="add_form d-flex gap-2 "  @submit.prevent="addMovie" >
 <input type='text' placeholder="Qanday kino? " class="form-control new_movie_label" v-bind:value="name" @input="name =$event.target.value" >
 <input type='number' placeholder="Nechi marotaba korilgan? " class="form-control new_movie_label" v-bind:value="viewers" @input="viewers  = $event.target.value" >
 <Button class="btn-outline-dark">Qoshish</Button>
@@ -10,14 +10,8 @@
 </template>
 
 <script>
- import Button from "../ui-componets/Button.vue";
- import Box from '../ui-componets/Box.vue'
 
     export default {
-        components:{
-    Button,
-    Box
-},
         data(){
             return {
               name:"",
@@ -44,5 +38,9 @@
 </script>
 
 <style  scoped>
-
+@media (max-width:800px){
+    .add_form{
+        flex-wrap: wrap !important;
+    }
+}
 </style>

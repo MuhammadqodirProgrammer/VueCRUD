@@ -10,11 +10,7 @@
 </template>
 
 <script>
-import Box from '../ui-componets/Box.vue'
 export default {
-    components:{
-        Box
-    },
     props: {
         allMoviesCount: {
             type: Number,
